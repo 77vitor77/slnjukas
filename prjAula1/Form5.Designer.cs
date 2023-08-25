@@ -139,7 +139,6 @@
             txtUsuario.PlaceholderText = "valor";
             txtUsuario.Size = new Size(195, 33);
             txtUsuario.TabIndex = 35;
-            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // button2
             // 
@@ -150,7 +149,7 @@
             button2.Name = "button2";
             button2.Size = new Size(195, 42);
             button2.TabIndex = 36;
-            button2.Text = "Conirmar";
+            button2.Text = "Confirmar";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 

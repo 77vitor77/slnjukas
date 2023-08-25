@@ -1,5 +1,10 @@
+using System;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Numerics;
-using prjAula1.Classes;
+using System.Runtime.InteropServices;
+
 
 namespace prjAula1
 {
@@ -12,6 +17,8 @@ namespace prjAula1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            
 
         }
 
@@ -43,6 +50,9 @@ namespace prjAula1
         private void button2_Click(object sender, EventArgs e)
         {
 
+            var menu = new SenhaPerdida();
+            menu.Show();
+
         }
 
         private void label2_Click_1(object sender, EventArgs e)
@@ -52,9 +62,9 @@ namespace prjAula1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var menu = new Form3();
+            var telamenu = new Form3();
             this.Hide();
-            menu.Show();
+            telamenu.Show();
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -80,35 +90,71 @@ namespace prjAula1
         private void button1_Click_1(object sender, EventArgs e)
         {
 
-            if (txtcpf.TextLength < 11 || txtSenha.TextLength < 6)
-
+            try
             {
-                lblMensagem.Text = "Preencha o campo corretamente";
-            }
 
-            else
+                //Criando uma conexão
+                SqlConnection conexao =
+                new SqlConnection(ConfigurationManager.ConnectionStrings["prjAula1.Properties.Settings.bancojuka"].ToString());
+                SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
 
-            {
-                if (txtcpf.Text == "12312312312" && txtSenha.Text == "123456")
+                //Criando um comando
+                SqlCommand cmd = new SqlCommand();
 
+                //criando texto do comando, tipo e conexão que será usada
+                cmd.CommandText = "psValidaLogin";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection = conexao;
+
+                //passando os parâmetros necessários
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("logindecliente", txtcpf.Text);
+                cmd.Parameters.AddWithValue("senha", txtSenha.Text);
+
+                conexao.Open(); //abrindo a conexão
+
+                leitor = cmd.ExecuteReader();
+                //igualando o leitor ao resultado trazido do BD
+
+                if (leitor.HasRows) //se o leitor encontrar linhas de dados
                 {
-                    lblMensagem.Text = "Usuário valido";
-                    var telamenu = new Form2();
-                    this.Hide();
-                    telamenu.Show();
+
+                    leitor.Read();
+                    
+                    UsuarioLogado.Id = leitor.GetInt32(0);
+                    UsuarioLogado.NomeCliente = leitor.GetString(1);
+                    UsuarioLogado.Cpf = leitor.GetString(2);
+                    UsuarioLogado.RG = leitor.GetString(3);
+                    UsuarioLogado.Senha = leitor.GetInt32(4);
+                    UsuarioLogado.DataNascimento = leitor.GetDateTime(5);
+                    UsuarioLogado.Email = leitor.GetString(6);
+                    UsuarioLogado.sexo = leitor.GetString(7);
+                    UsuarioLogado.Celular = leitor.GetString(8);
+                    UsuarioLogado.Endereço = leitor.GetString(9);
+                    if (!leitor.IsDBNull(10))
+
+                    {
+
+                        UsuarioLogado.Complemento = leitor.GetString(10);
+
+                    }
+                    UsuarioLogado.Cidade = leitor.GetString(10);
+                    UsuarioLogado.Estado = leitor.GetString(11);
+
+
+
+                    //fechando leitor
+                    leitor.Close();
+              
                 }
-
-                else
-
-                {
-
-                    lblMensagem.Text = "Usuário inválido";
-
-                }
-
             }
+            catch (Exception ex) 
+            { 
             
             
+
+            }
+
         }
     }
 }

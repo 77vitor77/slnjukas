@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="prjAula1.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="bancojuka" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;workstation id=vitorDataBaseJukaBank.mssql.somee.com;packet size=4096;user id=VitorGraciolli_SQLLogin_1;pwd=bb7hhvd6f5;data source=vitorDataBaseJukaBank.mssql.somee.com;persist security info=False;initial catalog=vitorDataBaseJukaBank&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">workstation id=vitorDataBaseJukaBank.mssql.somee.com;packet size=4096;user id=VitorGraciolli_SQLLogin_1;pwd=bb7hhvd6f5;data source=vitorDataBaseJukaBank.mssql.somee.com;persist security info=False;initial catalog=vitorDataBaseJukaBank</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

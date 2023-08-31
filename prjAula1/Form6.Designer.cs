@@ -28,75 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
+            menu = new MenuStrip();
             loginToolStripMenuItem = new ToolStripMenuItem();
             cadastroToolStripMenuItem = new ToolStripMenuItem();
             menuToolStripMenuItem = new ToolStripMenuItem();
             saqueToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            toolStripTextBox1 = new ToolStripTextBox();
+            toolStripTextBox2 = new ToolStripTextBox();
+            toolStripTextBox3 = new ToolStripTextBox();
+            menu.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // menu
             // 
-            menuStrip1.Dock = DockStyle.Left;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastroToolStripMenuItem, menuToolStripMenuItem, saqueToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(131, 554);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastroToolStripMenuItem, menuToolStripMenuItem, saqueToolStripMenuItem, toolStripTextBox1, toolStripTextBox2, toolStripTextBox3 });
+            menu.Location = new Point(0, 0);
+            menu.Name = "menu";
+            menu.Size = new Size(1057, 27);
+            menu.TabIndex = 0;
+            menu.Text = "menuStrip1";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(118, 19);
+            loginToolStripMenuItem.Size = new Size(49, 23);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
             // cadastroToolStripMenuItem
             // 
             cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            cadastroToolStripMenuItem.Size = new Size(118, 19);
+            cadastroToolStripMenuItem.Size = new Size(66, 23);
             cadastroToolStripMenuItem.Text = "Cadastro";
+            cadastroToolStripMenuItem.Visible = false;
             cadastroToolStripMenuItem.Click += cadastroToolStripMenuItem_Click;
             // 
             // menuToolStripMenuItem
             // 
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(118, 19);
+            menuToolStripMenuItem.Size = new Size(50, 23);
             menuToolStripMenuItem.Text = "Menu";
+            menuToolStripMenuItem.Visible = false;
             menuToolStripMenuItem.Click += menuToolStripMenuItem_Click;
             // 
             // saqueToolStripMenuItem
             // 
             saqueToolStripMenuItem.Name = "saqueToolStripMenuItem";
-            saqueToolStripMenuItem.Size = new Size(118, 19);
+            saqueToolStripMenuItem.Size = new Size(125, 23);
             saqueToolStripMenuItem.Text = "Saque/Transferência";
+            saqueToolStripMenuItem.Visible = false;
             saqueToolStripMenuItem.Click += saqueToolStripMenuItem_Click;
+            // 
+            // toolStripTextBox1
+            // 
+            toolStripTextBox1.Enabled = false;
+            toolStripTextBox1.Name = "toolStripTextBox1";
+            toolStripTextBox1.Size = new Size(100, 23);
+            toolStripTextBox1.Visible = false;
+            toolStripTextBox1.Click += toolStripTextBox1_Click;
+            // 
+            // toolStripTextBox2
+            // 
+            toolStripTextBox2.Enabled = false;
+            toolStripTextBox2.Name = "toolStripTextBox2";
+            toolStripTextBox2.Size = new Size(100, 23);
+            toolStripTextBox2.Text = "conta";
+            toolStripTextBox2.Visible = false;
+            // 
+            // toolStripTextBox3
+            // 
+            toolStripTextBox3.Enabled = false;
+            toolStripTextBox3.Name = "toolStripTextBox3";
+            toolStripTextBox3.Size = new Size(100, 23);
+            toolStripTextBox3.Visible = false;
             // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1150, 554);
-            Controls.Add(menuStrip1);
+            ClientSize = new Size(1057, 601);
+            Controls.Add(menu);
             IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = menu;
             Name = "Form6";
             Text = "Form6";
             Load += Form6_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menu.ResumeLayout(false);
+            menu.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip menu;
         private ToolStripMenuItem loginToolStripMenuItem;
         private ToolStripMenuItem cadastroToolStripMenuItem;
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem saqueToolStripMenuItem;
+        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripTextBox toolStripTextBox2;
+        private ToolStripTextBox toolStripTextBox3;
     }
 }

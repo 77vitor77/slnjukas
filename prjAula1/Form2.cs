@@ -39,7 +39,7 @@ namespace prjAula1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var telamenu = new Form1();
+            var telamenu = new Telalogin();
             this.Hide();
             telamenu.Show();
         }

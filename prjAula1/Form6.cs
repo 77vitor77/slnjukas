@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace prjAula1
 {
@@ -38,9 +39,25 @@ namespace prjAula1
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 janelaLogin = new Form1();
-            janelaLogin.MdiParent = this;
-            janelaLogin.Show();
+            if (this.menu.Items[0].Text == "Login")
+            {
+                Telalogin telaLogin = new Telalogin();
+                telaLogin.MdiParent = this;
+                telaLogin.Show();
+            }
+            else
+            {
+                menu.Items[0].Text = "Login";
+                menu.Items[1].Visible = false;
+                menu.Items[2].Visible = false;
+                menu.Items[3].Visible = false;
+                menu.Items[4].Visible = false;
+                menu.Items[4].Text = String.Empty;
+                menu.Items[5].Visible = false;
+                menu.Items[6].Visible = false;
+                menu.Items[6].Text = String.Empty;
+                UsuarioLogado.Deslogar();
+            }
         }
 
         private void saqueToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,6 +65,11 @@ namespace prjAula1
             Form5 janelaTransferencia = new Form5();
             janelaTransferencia.MdiParent = this;
             janelaTransferencia.Show();
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

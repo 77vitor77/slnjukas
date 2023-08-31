@@ -8,17 +8,17 @@ namespace prjAula1
 {
         public static class UsuarioLogado
         {
-            public static int Id { get; set; }
+            public static int IdCliente { get; set; }
             public static string? NomeCliente { get; set; }
             public static string? Cpf { get; set; }
             public static string? RG { get; set; }
-            public static int? Senha { get; set; }
+            public static string? Senha { get; set; }
             public static DateTime? DataNascimento { get; set; }    
             public static string? Email { get; set; }
             public static string? sexo { get; set; }
             public static string? Celular { get; set; }
-            public static string? Endereço { get; set; }
             public static string? Complemento { get; set; }
+            public static string? Endereço { get; set; }
             public static string? Cidade { get; set; }
             public static string? Estado { get; set; }
             
@@ -31,7 +31,7 @@ namespace prjAula1
 
             public static void Deslogar()
             {
-                UsuarioLogado.Id = 0;
+                UsuarioLogado.IdCliente = 0;
                 UsuarioLogado.NomeCliente = String.Empty;
                 UsuarioLogado.DataNascimento = null;
                 UsuarioLogado.RG = String.Empty;
@@ -41,7 +41,7 @@ namespace prjAula1
                 UsuarioLogado.Estado = String.Empty;
                 UsuarioLogado.Cpf = String.Empty;
                 UsuarioLogado.Celular = String.Empty;
-                UsuarioLogado.Senha = 0;
+                UsuarioLogado.Senha = "";
                 UsuarioLogado.Contas.Clear();
             }
         }   

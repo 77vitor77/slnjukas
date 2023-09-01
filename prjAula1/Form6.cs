@@ -25,7 +25,7 @@ namespace prjAula1
 
         private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form3 janelaCadastro = new Form3();
+            Cadastro janelaCadastro = new Cadastro();
             janelaCadastro.MdiParent = this;
             janelaCadastro.Show();
         }

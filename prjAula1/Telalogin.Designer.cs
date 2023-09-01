@@ -45,7 +45,7 @@
             // txtSenha
             // 
             txtSenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSenha.Location = new Point(285, 217);
+            txtSenha.Location = new Point(395, 250);
             txtSenha.MaxLength = 6;
             txtSenha.Name = "txtSenha";
             txtSenha.PlaceholderText = "senha";
@@ -56,7 +56,7 @@
             // 
             txtcpf.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtcpf.ForeColor = SystemColors.ScrollBar;
-            txtcpf.Location = new Point(285, 173);
+            txtcpf.Location = new Point(395, 206);
             txtcpf.MaxLength = 11;
             txtcpf.Name = "txtcpf";
             txtcpf.PlaceholderText = "usuario";
@@ -67,7 +67,7 @@
             // aqui
             // 
             aqui.AutoSize = true;
-            aqui.Location = new Point(347, 199);
+            aqui.Location = new Point(457, 232);
             aqui.Name = "aqui";
             aqui.Size = new Size(0, 15);
             aqui.TabIndex = 3;
@@ -78,7 +78,7 @@
             lblLogin.BackColor = Color.Transparent;
             lblLogin.Font = new Font("Agency FB", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblLogin.ForeColor = Color.HotPink;
-            lblLogin.Location = new Point(317, 128);
+            lblLogin.Location = new Point(427, 161);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(76, 42);
             lblLogin.TabIndex = 4;
@@ -92,7 +92,7 @@
             btnEsqueceuSenha.Cursor = Cursors.Hand;
             btnEsqueceuSenha.FlatStyle = FlatStyle.Flat;
             btnEsqueceuSenha.ForeColor = SystemColors.ButtonFace;
-            btnEsqueceuSenha.Location = new Point(266, 340);
+            btnEsqueceuSenha.Location = new Point(376, 373);
             btnEsqueceuSenha.Name = "btnEsqueceuSenha";
             btnEsqueceuSenha.Size = new Size(178, 23);
             btnEsqueceuSenha.TabIndex = 6;
@@ -107,7 +107,7 @@
             btnCadastrar.Cursor = Cursors.Hand;
             btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.ForeColor = SystemColors.ButtonFace;
-            btnCadastrar.Location = new Point(266, 369);
+            btnCadastrar.Location = new Point(376, 402);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(178, 23);
             btnCadastrar.TabIndex = 8;
@@ -119,7 +119,7 @@
             // 
             lblMensagem.AutoSize = true;
             lblMensagem.ForeColor = SystemColors.ControlLightLight;
-            lblMensagem.Location = new Point(314, 419);
+            lblMensagem.Location = new Point(422, 420);
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new Size(0, 15);
             lblMensagem.TabIndex = 9;
@@ -130,7 +130,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.ForeColor = Color.HotPink;
-            label2.Location = new Point(319, 523);
+            label2.Location = new Point(427, 524);
             label2.Name = "label2";
             label2.Size = new Size(78, 15);
             label2.TabIndex = 10;
@@ -145,7 +145,7 @@
             btnacessar.FlatStyle = FlatStyle.Flat;
             btnacessar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnacessar.ForeColor = SystemColors.ButtonFace;
-            btnacessar.Location = new Point(306, 275);
+            btnacessar.Location = new Point(416, 308);
             btnacessar.Name = "btnacessar";
             btnacessar.Size = new Size(100, 39);
             btnacessar.TabIndex = 11;
@@ -157,20 +157,20 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(209, 12);
+            pictureBox2.Location = new Point(319, 45);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(293, 113);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 38;
             pictureBox2.TabStop = false;
             // 
-            // Form1
+            // Telalogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightPink;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(714, 559);
+            ClientSize = new Size(898, 559);
             Controls.Add(pictureBox2);
             Controls.Add(btnacessar);
             Controls.Add(label2);
@@ -182,7 +182,7 @@
             Controls.Add(txtcpf);
             Controls.Add(txtSenha);
             Cursor = Cursors.Hand;
-            Name = "Form1";
+            Name = "Telalogin";
             Text = "Tela Login";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

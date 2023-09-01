@@ -13,7 +13,7 @@ namespace prjAula1
 {
     public partial class Form2 : Form
     {
-        public class Cliente : Form3
+        public class Cliente : Cadastro
         {
 
 

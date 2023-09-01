@@ -19,7 +19,7 @@ namespace prjAula1
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            
+
 
         }
 
@@ -63,7 +63,7 @@ namespace prjAula1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            var telamenu = new Form3();
+            Cadastro telamenu = new Cadastro();
             this.Hide();
             telamenu.Show();
         }
@@ -94,125 +94,125 @@ namespace prjAula1
             //try
             //{
 
-                //Criando uma conexão
-                SqlConnection conexao =
-                new SqlConnection(ConfigurationManager.ConnectionStrings["prjAula1.Properties.Settings.bancojuka"].ToString());
-                SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
+            //Criando uma conexão
+            SqlConnection conexao =
+            new SqlConnection(ConfigurationManager.ConnectionStrings["prjAula1.Properties.Settings.bancojuka"].ToString());
+            SqlDataReader leitor; //declarando uma variável do tipo leitor de dados
 
-                //Criando um comando
-                SqlCommand cmd = new SqlCommand();
+            //Criando um comando
+            SqlCommand cmd = new SqlCommand();
+
+            //criando texto do comando, tipo e conexão que será usada
+            cmd.CommandText = "psValidaLogin";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conexao;
+
+            //passando os parâmetros necessários
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("cpf", txtcpf.Text);
+            cmd.Parameters.AddWithValue("senha", txtSenha.Text);
+
+            conexao.Open(); //abrindo a conexão
+
+            leitor = cmd.ExecuteReader();
+            //igualando o leitor ao resultado trazido do BD
+
+            if (leitor.HasRows) //se o leitor encontrar linhas de dados
+            {
+
+                leitor.Read();
+
+                UsuarioLogado.IdCliente = leitor.GetInt32(0);
+                UsuarioLogado.NomeCliente = leitor.GetString(1);
+                UsuarioLogado.Cpf = leitor.GetString(2);
+                UsuarioLogado.RG = leitor.GetString(3);
+                UsuarioLogado.Senha = leitor.GetString(4);
+                UsuarioLogado.DataNascimento = leitor.GetDateTime(5);
+                UsuarioLogado.Email = leitor.GetString(6);
+                UsuarioLogado.sexo = leitor.GetString(7);
+                UsuarioLogado.Celular = leitor.GetString(8);
+                if (!leitor.IsDBNull(10))
+                {
+
+                    UsuarioLogado.Complemento = leitor.GetString(10);
+
+                }
+                UsuarioLogado.Endereço = leitor.GetString(9);
+                UsuarioLogado.Cidade = leitor.GetString(10);
+                UsuarioLogado.Estado = leitor.GetString(11);
+
+                //fechando leitor
+                leitor.Close();
 
                 //criando texto do comando, tipo e conexão que será usada
-                cmd.CommandText = "psValidaLogin";
+                cmd.CommandText = "ps_buscaContasPorIdCliente";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conexao;
 
+
+
                 //passando os parâmetros necessários
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("cpf", txtcpf.Text);
-                cmd.Parameters.AddWithValue("senha", txtSenha.Text);
+                cmd.Parameters.AddWithValue("idCliente", UsuarioLogado.IdCliente);
 
-                conexao.Open(); //abrindo a conexão
 
+
+                //ler novamente o leitor
                 leitor = cmd.ExecuteReader();
-                //igualando o leitor ao resultado trazido do BD
 
-                if (leitor.HasRows) //se o leitor encontrar linhas de dados
+                //verificar se há linhas retornadas do leitor
+                if (leitor.HasRows)
                 {
-
-                    leitor.Read();
-                    
-                    UsuarioLogado.IdCliente = leitor.GetInt32(0);
-                    UsuarioLogado.NomeCliente = leitor.GetString(1);
-                    UsuarioLogado.Cpf = leitor.GetString(2);
-                    UsuarioLogado.RG = leitor.GetString(3);
-                    UsuarioLogado.Senha = leitor.GetString(4);
-                    UsuarioLogado.DataNascimento = leitor.GetDateTime(5);
-                    UsuarioLogado.Email = leitor.GetString(6);
-                    UsuarioLogado.sexo = leitor.GetString(7);
-                    UsuarioLogado.Celular = leitor.GetString(8);
-                    if (!leitor.IsDBNull(10))
+                    //repete a leitura e enquanto há linhas segue na estrutura
+                    //de repetição
+                    while (leitor.Read())
                     {
+                        //cria uma conta na memória
+                        Conta conta = new Conta();
+                        //passa os dados do leitor para a conta na memória - objeto conta
+                        conta.IdConta = leitor.GetInt32(0);
+                        conta.IdCliente = leitor.GetInt32(1);
+                        conta.DataAbertura = leitor.GetDateTime(2);
+                        conta.Saldo = leitor.GetDecimal(4);
+                        conta.StatusConta = leitor.GetString(5);
+                        conta.Senha = leitor.GetString(6);
 
-                        UsuarioLogado.Complemento = leitor.GetString(10);
 
+
+                        //adiciona a conta recém criada na memória para a colection de contas
+                        UsuarioLogado.Contas.Add(conta);
                     }
-                    UsuarioLogado.Endereço = leitor.GetString(9);
-                    UsuarioLogado.Cidade = leitor.GetString(10);
-                    UsuarioLogado.Estado = leitor.GetString(11);
-
-                    //fechando leitor
-                    leitor.Close();
-
-                    //criando texto do comando, tipo e conexão que será usada
-                    cmd.CommandText = "ps_buscaContasPorIdCliente";
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Connection = conexao;
-
-
-
-                    //passando os parâmetros necessários
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("idCliente", UsuarioLogado.IdCliente);
-
-
-
-                    //ler novamente o leitor
-                    leitor = cmd.ExecuteReader();
-
-                    //verificar se há linhas retornadas do leitor
-                    if (leitor.HasRows)
-                    {
-                        //repete a leitura e enquanto há linhas segue na estrutura
-                        //de repetição
-                        while (leitor.Read())
-                        {
-                            //cria uma conta na memória
-                            Conta conta = new Conta();
-                            //passa os dados do leitor para a conta na memória - objeto conta
-                            conta.IdConta = leitor.GetInt32(0);
-                            conta.IdCliente = leitor.GetInt32(1);
-                            conta.DataAbertura = leitor.GetDateTime(2);
-                            conta.Saldo = leitor.GetDecimal(4);
-                            conta.StatusConta = leitor.GetString(5);
-                            conta.Senha = leitor.GetString(6);
-
-
-
-                            //adiciona a conta recém criada na memória para a colection de contas
-                            UsuarioLogado.Contas.Add(conta);
-                        }
-                    }                    
-                    leitor.Close(); //fecha leitor
-                    conexao.Close(); //fecha conexao com BD
-
-                    Form telaPrincipal = Application.OpenForms["Form6"];
-                    //acessando o formulário aberto através da variável janelaPrincipal
-                    MenuStrip menuPrincipal = (MenuStrip)telaPrincipal.Controls[0];
-                    menuPrincipal.Items[0].Text = "Logout";
-                    menuPrincipal.Items[1].Visible = true;
-                    menuPrincipal.Items[2].Visible = true;
-                    menuPrincipal.Items[3].Visible = true;
-                    menuPrincipal.Items[4].Visible = true;
-                    menuPrincipal.Items[4].Text = UsuarioLogado.NomeCliente;
-                    menuPrincipal.Items[5].Visible = true;
-                    menuPrincipal.Items[6].Visible = true;
-                    menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString(); ;
-
-
-
-                    MessageBox.Show($"Olá,{UsuarioLogado.NomeCliente}!\n" +
-                        $"Você foi logado na conta {UsuarioLogado.Contas[0].IdConta.ToString()}\n" +
-                        $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
-                    //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
-                    //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
-                    //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
-                    this.Close();
                 }
-                else
-                {
-                    MessageBox.Show("Usuário ou senha incorretos!");
-                }
+                leitor.Close(); //fecha leitor
+                conexao.Close(); //fecha conexao com BD
+
+                Form telaPrincipal = Application.OpenForms["Form6"];
+                //acessando o formulário aberto através da variável janelaPrincipal
+                MenuStrip menuPrincipal = (MenuStrip)telaPrincipal.Controls[0];
+                menuPrincipal.Items[0].Text = "Logout";
+                menuPrincipal.Items[1].Visible = true;
+                menuPrincipal.Items[2].Visible = true;
+                menuPrincipal.Items[3].Visible = true;
+                menuPrincipal.Items[4].Visible = true;
+                menuPrincipal.Items[4].Text = UsuarioLogado.NomeCliente;
+                menuPrincipal.Items[5].Visible = true;
+                menuPrincipal.Items[6].Visible = true;
+                menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString(); ;
+
+
+
+                MessageBox.Show($"Olá,{UsuarioLogado.NomeCliente}!\n" +
+                    $"Você foi logado na conta {UsuarioLogado.Contas[0].IdConta.ToString()}\n" +
+                    $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
+                //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
+                //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
+                //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou senha incorretos!");
+            }
             //}
             //catch (Exception ex) 
             //{

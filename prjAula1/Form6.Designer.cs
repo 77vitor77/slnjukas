@@ -36,22 +36,23 @@
             toolStripTextBox1 = new ToolStripTextBox();
             toolStripTextBox2 = new ToolStripTextBox();
             toolStripTextBox3 = new ToolStripTextBox();
+            toolStripComboBox1 = new ToolStripMenuItem();
             menu.SuspendLayout();
             SuspendLayout();
             // 
             // menu
             // 
-            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastroToolStripMenuItem, menuToolStripMenuItem, saqueToolStripMenuItem, toolStripTextBox1, toolStripTextBox2, toolStripTextBox3 });
+            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, cadastroToolStripMenuItem, menuToolStripMenuItem, saqueToolStripMenuItem, toolStripTextBox1, toolStripTextBox2, toolStripTextBox3, toolStripComboBox1 });
             menu.Location = new Point(0, 0);
             menu.Name = "menu";
-            menu.Size = new Size(1057, 24);
+            menu.Size = new Size(1057, 27);
             menu.TabIndex = 0;
             menu.Text = "menuStrip1";
             // 
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(49, 20);
+            loginToolStripMenuItem.Size = new Size(49, 23);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
             // 
@@ -101,6 +102,16 @@
             toolStripTextBox3.Name = "toolStripTextBox3";
             toolStripTextBox3.Size = new Size(100, 23);
             toolStripTextBox3.Visible = false;
+            toolStripTextBox3.Click += toolStripTextBox3_Click;
+            // 
+            // toolStripComboBox1
+            // 
+            toolStripComboBox1.BackColor = SystemColors.Window;
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new Size(136, 23);
+            toolStripComboBox1.Text = "modificação de dados";
+            toolStripComboBox1.Visible = false;
+            toolStripComboBox1.Click += toolStripComboBox1_Click;
             // 
             // Form6
             // 
@@ -129,5 +140,6 @@
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripTextBox toolStripTextBox2;
         private ToolStripTextBox toolStripTextBox3;
+        private ToolStripMenuItem toolStripComboBox1;
     }
 }

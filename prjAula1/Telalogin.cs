@@ -172,10 +172,11 @@ namespace prjAula1
                         //passa os dados do leitor para a conta na memória - objeto conta
                         conta.IdConta = leitor.GetInt32(0);
                         conta.IdCliente = leitor.GetInt32(1);
-                        conta.DataAbertura = leitor.GetDateTime(2);
+                        conta.Senhadaconta = leitor.GetString(2);
+                        conta.DataAbertura = leitor.GetDateTime(3);
                         conta.Saldo = leitor.GetDecimal(4);
                         conta.StatusConta = leitor.GetString(5);
-                        conta.Senha = leitor.GetString(6);
+                        
 
 
 
@@ -197,7 +198,8 @@ namespace prjAula1
                 menuPrincipal.Items[4].Text = UsuarioLogado.NomeCliente;
                 menuPrincipal.Items[5].Visible = true;
                 menuPrincipal.Items[6].Visible = true;
-                menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString(); ;
+                menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString();;
+                menuPrincipal.Items[7].Visible = true;
 
 
 

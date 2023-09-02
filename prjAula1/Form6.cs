@@ -71,5 +71,19 @@ namespace prjAula1
         {
 
         }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+            ModificarDados janelaModificaçãoDeDados = new ModificarDados();
+            janelaModificaçãoDeDados.MdiParent = this;
+            janelaModificaçãoDeDados.Show();
+
+        }
+
+        private void toolStripTextBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

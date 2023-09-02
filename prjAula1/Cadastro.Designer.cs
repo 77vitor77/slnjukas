@@ -40,14 +40,14 @@
             txtcidade = new TextBox();
             txtendereco = new TextBox();
             Complemento = new TextBox();
-            textBox4 = new TextBox();
+            txtsenha = new TextBox();
             txtcelular = new TextBox();
             pictureBox3 = new PictureBox();
-            txtestado = new TextBox();
-            textBox7 = new TextBox();
+            txtemail = new TextBox();
             CBsexo = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            dtpdatadenascimento = new DateTimePicker();
             txtnaoimporta = new TextBox();
+            CBestados = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -80,6 +80,7 @@
             txtNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtNome.ForeColor = SystemColors.ScrollBar;
             txtNome.Location = new Point(74, 116);
+            txtNome.MaxLength = 100;
             txtNome.Name = "txtNome";
             txtNome.PlaceholderText = "Nome Completo";
             txtNome.Size = new Size(217, 33);
@@ -90,6 +91,7 @@
             txtRG.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtRG.ForeColor = SystemColors.ScrollBar;
             txtRG.Location = new Point(74, 194);
+            txtRG.MaxLength = 9;
             txtRG.Name = "txtRG";
             txtRG.PlaceholderText = "RG";
             txtRG.Size = new Size(217, 33);
@@ -100,6 +102,7 @@
             txtCPF.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtCPF.ForeColor = SystemColors.ScrollBar;
             txtCPF.Location = new Point(74, 155);
+            txtCPF.MaxLength = 11;
             txtCPF.Name = "txtCPF";
             txtCPF.PlaceholderText = "CPF";
             txtCPF.Size = new Size(217, 33);
@@ -110,6 +113,7 @@
             txtrepetirsenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtrepetirsenha.ForeColor = SystemColors.ScrollBar;
             txtrepetirsenha.Location = new Point(74, 272);
+            txtrepetirsenha.MaxLength = 6;
             txtrepetirsenha.Name = "txtrepetirsenha";
             txtrepetirsenha.PlaceholderText = "Repetir senha";
             txtrepetirsenha.Size = new Size(217, 33);
@@ -144,6 +148,7 @@
             txtcidade.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtcidade.ForeColor = SystemColors.ScrollBar;
             txtcidade.Location = new Point(434, 311);
+            txtcidade.MaxLength = 50;
             txtcidade.Name = "txtcidade";
             txtcidade.PlaceholderText = "cidade";
             txtcidade.Size = new Size(217, 33);
@@ -155,6 +160,7 @@
             txtendereco.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtendereco.ForeColor = SystemColors.ScrollBar;
             txtendereco.Location = new Point(434, 272);
+            txtendereco.MaxLength = 100;
             txtendereco.Name = "txtendereco";
             txtendereco.PlaceholderText = "endereço";
             txtendereco.Size = new Size(217, 33);
@@ -165,26 +171,29 @@
             Complemento.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Complemento.ForeColor = SystemColors.ScrollBar;
             Complemento.Location = new Point(434, 233);
+            Complemento.MaxLength = 100;
             Complemento.Name = "Complemento";
             Complemento.PlaceholderText = "Complemento";
             Complemento.Size = new Size(217, 33);
             Complemento.TabIndex = 42;
             // 
-            // textBox4
+            // txtsenha
             // 
-            textBox4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.ForeColor = SystemColors.ScrollBar;
-            textBox4.Location = new Point(74, 233);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "senha(6 digitos)";
-            textBox4.Size = new Size(217, 33);
-            textBox4.TabIndex = 41;
+            txtsenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtsenha.ForeColor = SystemColors.ScrollBar;
+            txtsenha.Location = new Point(74, 233);
+            txtsenha.MaxLength = 6;
+            txtsenha.Name = "txtsenha";
+            txtsenha.PlaceholderText = "senha(6 digitos)";
+            txtsenha.Size = new Size(217, 33);
+            txtsenha.TabIndex = 41;
             // 
             // txtcelular
             // 
             txtcelular.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txtcelular.ForeColor = SystemColors.ScrollBar;
             txtcelular.Location = new Point(434, 194);
+            txtcelular.MaxLength = 11;
             txtcelular.Name = "txtcelular";
             txtcelular.PlaceholderText = "Celular";
             txtcelular.Size = new Size(217, 33);
@@ -200,25 +209,16 @@
             pictureBox3.TabIndex = 39;
             pictureBox3.TabStop = false;
             // 
-            // txtestado
+            // txtemail
             // 
-            txtestado.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtestado.ForeColor = SystemColors.ScrollBar;
-            txtestado.Location = new Point(434, 350);
-            txtestado.Name = "txtestado";
-            txtestado.PlaceholderText = "estado";
-            txtestado.Size = new Size(217, 33);
-            txtestado.TabIndex = 45;
-            // 
-            // textBox7
-            // 
-            textBox7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.ForeColor = SystemColors.ScrollBar;
-            textBox7.Location = new Point(74, 311);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = "email";
-            textBox7.Size = new Size(217, 33);
-            textBox7.TabIndex = 46;
+            txtemail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtemail.ForeColor = SystemColors.ScrollBar;
+            txtemail.Location = new Point(74, 311);
+            txtemail.MaxLength = 50;
+            txtemail.Name = "txtemail";
+            txtemail.PlaceholderText = "email";
+            txtemail.Size = new Size(217, 33);
+            txtemail.TabIndex = 46;
             // 
             // CBsexo
             // 
@@ -231,13 +231,13 @@
             CBsexo.TabIndex = 47;
             CBsexo.Text = "sexo";
             // 
-            // dateTimePicker1
+            // dtpdatadenascimento
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(434, 165);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(217, 23);
-            dateTimePicker1.TabIndex = 48;
+            dtpdatadenascimento.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpdatadenascimento.Location = new Point(434, 160);
+            dtpdatadenascimento.Name = "dtpdatadenascimento";
+            dtpdatadenascimento.Size = new Size(217, 23);
+            dtpdatadenascimento.TabIndex = 48;
             // 
             // txtnaoimporta
             // 
@@ -249,21 +249,32 @@
             txtnaoimporta.Size = new Size(217, 33);
             txtnaoimporta.TabIndex = 49;
             // 
+            // CBestados
+            // 
+            CBestados.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CBestados.FormattingEnabled = true;
+            CBestados.Items.AddRange(new object[] { "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins" });
+            CBestados.Location = new Point(434, 350);
+            CBestados.Name = "CBestados";
+            CBestados.Size = new Size(217, 33);
+            CBestados.TabIndex = 50;
+            CBestados.Text = "estados";
+            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(725, 538);
+            Controls.Add(CBestados);
             Controls.Add(txtnaoimporta);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(dtpdatadenascimento);
             Controls.Add(CBsexo);
-            Controls.Add(textBox7);
-            Controls.Add(txtestado);
+            Controls.Add(txtemail);
             Controls.Add(txtcidade);
             Controls.Add(txtendereco);
             Controls.Add(Complemento);
-            Controls.Add(textBox4);
+            Controls.Add(txtsenha);
             Controls.Add(txtcelular);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -296,13 +307,13 @@
         private TextBox txtcidade;
         private TextBox txtendereco;
         private TextBox Complemento;
-        private TextBox textBox4;
+        private TextBox txtsenha;
         private TextBox txtcelular;
         private PictureBox pictureBox3;
-        private TextBox txtestado;
-        private TextBox textBox7;
+        private TextBox txtemail;
         private ComboBox CBsexo;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpdatadenascimento;
         private TextBox txtnaoimporta;
+        private ComboBox CBestados;
     }
 }

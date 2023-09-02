@@ -11,9 +11,8 @@ namespace DTO
             public int IdConta { get; set; }
             public int IdCliente { get; set; }
             public DateTime DataAbertura { get; set; }
-            public DateTime DataFechamento { get; set; }
             public decimal Saldo { get; set; }
             public string StatusConta { get; set; }
-            public string Senha { get; set; }
+            public string Senhadaconta { get; set; }
         }
 }

@@ -109,10 +109,12 @@ C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\bin\Debug\net6.0-window
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\bin\Debug\net6.0-windows\DTO.pdb
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.csproj.AssemblyReference.cache
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.Cadastro.resources
+C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.CadastroDeConta.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.Form2.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.Form5.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.Form6.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.jucas.resources
+C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.ModificarDados.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.Properties.Resources.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.SenhaPerdida.resources
 C:\Users\vitor.goliveira9\source\repos\slnjukas\prjAula1\obj\Debug\net6.0-windows\prjAula1.Telalogin.resources

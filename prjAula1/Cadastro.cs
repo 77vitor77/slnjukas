@@ -34,6 +34,66 @@ namespace prjAula1
         public void button2_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                if (txtsenha.Text == txtrepetirsenha.Text)
+                {
+                    //Criando uma conexão
+                    SqlConnection conexao =
+                           new SqlConnection(ConfigurationManager.ConnectionStrings["prjAula1.Properties.Settings.bancojuka"].ToString());
+
+
+
+                    //Criando um comando
+                    SqlCommand cmd = new SqlCommand();
+
+
+
+                    //criando texto do comando, tipo e conexão que será usada
+                    cmd.CommandText = "pi_Cliente";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Connection = conexao;
+
+
+
+                    //inserindo parâmetros à procedure
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("nomeCliente", txtNome.Text);
+                    cmd.Parameters.AddWithValue("cpf", txtCPF.Text);
+                    cmd.Parameters.AddWithValue("rg", txtRG.Text);
+                    cmd.Parameters.AddWithValue("senha", txtsenha.Text);
+                    cmd.Parameters.AddWithValue("email", txtemail.Text);
+                    cmd.Parameters.AddWithValue("sexo", CBsexo.Text);
+                    cmd.Parameters.AddWithValue("dataNascimento", Convert.ToDateTime(dtpdatadenascimento.Text));
+                    cmd.Parameters.AddWithValue("Celular", txtcelular.Text);
+                    cmd.Parameters.AddWithValue("complemento", Complemento.Text);
+                    cmd.Parameters.AddWithValue("endereco", txtendereco.Text);
+                    cmd.Parameters.AddWithValue("cidade", txtcidade.Text);
+                    cmd.Parameters.AddWithValue("estado", CBestados.Text);
+
+
+
+                    //abrir a conexão
+                    conexao.Open();
+                    cmd.ExecuteNonQuery(); //executa o comando no BD
+                    conexao.Close();
+                    MessageBox.Show("Cliente cadastrado com sucesso!!!", "Info",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                    this.Close();
+                    Classedelimpeza.LimpaForm(this);
+                }
+                else
+                {
+                    throw new Exception("Os campos de senha não coincidem!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
         }

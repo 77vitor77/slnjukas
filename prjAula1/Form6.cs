@@ -56,6 +56,7 @@ namespace prjAula1
                 menu.Items[5].Visible = false;
                 menu.Items[6].Visible = false;
                 menu.Items[6].Text = String.Empty;
+                menu.Items[7].Visible = false;
                 UsuarioLogado.Deslogar();
             }
         }

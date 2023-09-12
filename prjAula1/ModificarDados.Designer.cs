@@ -49,6 +49,7 @@
             lblLogin = new Label();
             btnmodificar = new Button();
             btnLimpar = new Button();
+            txtSenhaParaAceitar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -252,7 +253,7 @@
             btnmodificar.BackColor = Color.DeepPink;
             btnmodificar.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnmodificar.ForeColor = Color.White;
-            btnmodificar.Location = new Point(69, 446);
+            btnmodificar.Location = new Point(292, 446);
             btnmodificar.Name = "btnmodificar";
             btnmodificar.Size = new Size(222, 43);
             btnmodificar.TabIndex = 71;
@@ -265,7 +266,7 @@
             btnLimpar.BackColor = Color.DeepPink;
             btnLimpar.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnLimpar.ForeColor = Color.White;
-            btnLimpar.Location = new Point(69, 494);
+            btnLimpar.Location = new Point(292, 494);
             btnLimpar.Name = "btnLimpar";
             btnLimpar.Size = new Size(222, 43);
             btnLimpar.TabIndex = 72;
@@ -273,12 +274,24 @@
             btnLimpar.UseVisualStyleBackColor = false;
             btnLimpar.Click += btnLimpar_Click;
             // 
+            // txtSenhaParaAceitar
+            // 
+            txtSenhaParaAceitar.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSenhaParaAceitar.ForeColor = SystemColors.ScrollBar;
+            txtSenhaParaAceitar.Location = new Point(69, 445);
+            txtSenhaParaAceitar.MaxLength = 6;
+            txtSenhaParaAceitar.Name = "txtSenhaParaAceitar";
+            txtSenhaParaAceitar.PlaceholderText = "Senha atual (6 digitos)";
+            txtSenhaParaAceitar.Size = new Size(217, 33);
+            txtSenhaParaAceitar.TabIndex = 73;
+            // 
             // ModificarDados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(843, 549);
+            Controls.Add(txtSenhaParaAceitar);
             Controls.Add(btnLimpar);
             Controls.Add(btnmodificar);
             Controls.Add(lblLogin);
@@ -331,5 +344,6 @@
         private Label lblLogin;
         private Button btnmodificar;
         private Button btnLimpar;
+        private TextBox txtSenhaParaAceitar;
     }
 }

@@ -128,7 +128,7 @@
             button2.Name = "button2";
             button2.Size = new Size(222, 43);
             button2.TabIndex = 30;
-            button2.Text = "Criar Conta";
+            button2.Text = "Criar cadastro ";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 

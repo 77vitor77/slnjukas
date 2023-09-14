@@ -1,6 +1,6 @@
 ﻿namespace prjAula1
 {
-    partial class Form5
+    partial class DepositoTransferenciaSaque
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepositoTransferenciaSaque));
             radioButton3 = new RadioButton();
             radioButton1 = new RadioButton();
             label1 = new Label();
@@ -41,6 +41,7 @@
             pictureBox2 = new PictureBox();
             radioButton2 = new RadioButton();
             button1 = new Button();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -191,12 +192,23 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(171, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 30);
+            label4.TabIndex = 40;
+            label4.Text = "label4";
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(763, 509);
+            Controls.Add(label4);
             Controls.Add(button1);
             Controls.Add(radioButton2);
             Controls.Add(pictureBox2);
@@ -231,5 +243,6 @@
         internal protected PictureBox pictureBox2;
         private RadioButton radioButton2;
         private Button button1;
+        private Label label4;
     }
 }

@@ -56,14 +56,13 @@ namespace prjAula1
                 menu.Items[5].Visible = false;
                 menu.Items[6].Visible = false;
                 menu.Items[6].Text = String.Empty;
-                menu.Items[7].Visible = false;
                 UsuarioLogado.Deslogar();
             }
         }
 
         private void saqueToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form5 janelaTransferencia = new Form5();
+            DepositoTransferenciaSaque janelaTransferencia = new DepositoTransferenciaSaque();
             janelaTransferencia.MdiParent = this;
             janelaTransferencia.Show();
         }
@@ -85,6 +84,63 @@ namespace prjAula1
         private void toolStripTextBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CadastroDeConta janelaMenu = new CadastroDeConta();
+            janelaMenu.MdiParent = this;
+            janelaMenu.Show();
+        }
+
+        private void criarContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroDeConta janelaMenu = new CadastroDeConta();
+            janelaMenu.MdiParent = this;
+            janelaMenu.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form2 janelaMenu = new Form2();
+            janelaMenu.MdiParent = this;
+            janelaMenu.Show();
+        }
+
+        private void modificaçãoDeDadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModificarDados janelaModificaçãoDeDados = new ModificarDados();
+            janelaModificaçãoDeDados.MdiParent = this;
+            janelaModificaçãoDeDados.Show();
+        }
+
+        private void saquetranferenciadepositoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DepositoTransferenciaSaque janelaTransferencia = new DepositoTransferenciaSaque();
+            janelaTransferencia.MdiParent = this;
+            janelaTransferencia.Show();
+        }
+
+        private void cadastroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Cadastro janelaCadastro = new Cadastro();
+            janelaCadastro.MdiParent = this;
+            janelaCadastro.Show();
         }
     }
 }

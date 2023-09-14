@@ -56,7 +56,7 @@ namespace prjAula1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            var tranferencia = new Form5();
+            var tranferencia = new DepositoTransferenciaSaque();
             this.Hide();
             tranferencia.Show();
         }

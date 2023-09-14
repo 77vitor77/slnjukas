@@ -43,7 +43,7 @@ namespace prjAula1
         {
             try
             {
-                if (txtSenhaParaAceitar.Text == UsuarioLogado.Senha)
+                if (txtSenhaParaAceitar.Text == UsuarioLogado.Senha && txtsenha.Text == txtrepetirsenha.Text)
                 {
 
                     //Criando uma conexão
@@ -102,6 +102,22 @@ namespace prjAula1
 
             Classedelimpeza.LimpaForm(this);
 
+        }
+
+        private void btnPreencher_Click(object sender, EventArgs e)
+        {
+            txtNome.Text = UsuarioLogado.NomeCliente;
+            txtCPF.Text = UsuarioLogado.Cpf;
+            txtRG.Text = UsuarioLogado.RG;
+            txtsenha.Text = UsuarioLogado.Senha;
+            txtemail.Text = UsuarioLogado.Email;
+            CBsexo.Text = UsuarioLogado.sexo;
+            dtpdatadenascimento.Text = Convert.ToString(UsuarioLogado.DataNascimento);
+            txtcelular.Text = UsuarioLogado.Celular;
+            Complemento.Text = UsuarioLogado.Complemento;
+            txtendereco.Text = UsuarioLogado.Endereço;
+            txtcidade.Text = UsuarioLogado.Cidade;
+            CBestados.Text = UsuarioLogado.Estado;
         }
     }
 }

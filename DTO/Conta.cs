@@ -13,6 +13,7 @@ namespace DTO
             public DateTime DataAbertura { get; set; }
             public decimal Saldo { get; set; }
             public string StatusConta { get; set; }
+            public string tipoConta { get; set; }
             public string Senhadaconta { get; set; }
         }
 }

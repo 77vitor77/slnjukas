@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prjAula1
 {
-    public partial class Form5 : Form
+    public partial class DepositoTransferenciaSaque : Form
     {
-        public Form5()
+        public DepositoTransferenciaSaque()
         {
             InitializeComponent();
         }

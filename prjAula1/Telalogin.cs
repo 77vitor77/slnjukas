@@ -198,8 +198,7 @@ namespace prjAula1
                 menuPrincipal.Items[4].Text = UsuarioLogado.NomeCliente;
                 menuPrincipal.Items[5].Visible = true;
                 menuPrincipal.Items[6].Visible = true;
-                menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString();;
-                menuPrincipal.Items[7].Visible = true;
+                menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString();
 
 
 

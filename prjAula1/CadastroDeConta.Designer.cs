@@ -31,13 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroDeConta));
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtprimeirodeposito = new TextBox();
+            txtsenha = new TextBox();
+            txtrepetirsenha = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             button1 = new Button();
+            CBtipodeconta = new ComboBox();
+            lblTipoDeConta = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
@@ -64,36 +66,36 @@
             pictureBox3.TabIndex = 40;
             pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // txtprimeirodeposito
             // 
-            textBox1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(179, 147);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(177, 33);
-            textBox1.TabIndex = 41;
+            txtprimeirodeposito.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtprimeirodeposito.Location = new Point(179, 127);
+            txtprimeirodeposito.Name = "txtprimeirodeposito";
+            txtprimeirodeposito.Size = new Size(177, 33);
+            txtprimeirodeposito.TabIndex = 41;
             // 
-            // textBox2
+            // txtsenha
             // 
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(179, 236);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(177, 33);
-            textBox2.TabIndex = 42;
+            txtsenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtsenha.Location = new Point(179, 255);
+            txtsenha.Name = "txtsenha";
+            txtsenha.Size = new Size(177, 33);
+            txtsenha.TabIndex = 42;
             // 
-            // textBox3
+            // txtrepetirsenha
             // 
-            textBox3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(179, 328);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(177, 33);
-            textBox3.TabIndex = 43;
+            txtrepetirsenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtrepetirsenha.Location = new Point(179, 319);
+            txtrepetirsenha.Name = "txtrepetirsenha";
+            txtrepetirsenha.Size = new Size(177, 33);
+            txtrepetirsenha.TabIndex = 43;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(179, 119);
+            label1.Location = new Point(179, 99);
             label1.Name = "label1";
             label1.Size = new Size(162, 25);
             label1.TabIndex = 44;
@@ -104,7 +106,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(179, 208);
+            label2.Location = new Point(179, 227);
             label2.Name = "label2";
             label2.Size = new Size(62, 25);
             label2.TabIndex = 45;
@@ -115,7 +117,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(179, 300);
+            label3.Location = new Point(179, 291);
             label3.Name = "label3";
             label3.Size = new Size(123, 25);
             label3.TabIndex = 46;
@@ -124,7 +126,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(179, 381);
+            button1.Location = new Point(179, 384);
             button1.Name = "button1";
             button1.Size = new Size(177, 41);
             button1.TabIndex = 47;
@@ -132,22 +134,45 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // CdastroDeConta
+            // CBtipodeconta
+            // 
+            CBtipodeconta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            CBtipodeconta.FormattingEnabled = true;
+            CBtipodeconta.Items.AddRange(new object[] { "Corrente", "Poupança" });
+            CBtipodeconta.Location = new Point(179, 191);
+            CBtipodeconta.Name = "CBtipodeconta";
+            CBtipodeconta.Size = new Size(177, 33);
+            CBtipodeconta.TabIndex = 48;
+            // 
+            // lblTipoDeConta
+            // 
+            lblTipoDeConta.AutoSize = true;
+            lblTipoDeConta.BackColor = Color.Transparent;
+            lblTipoDeConta.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTipoDeConta.Location = new Point(179, 163);
+            lblTipoDeConta.Name = "lblTipoDeConta";
+            lblTipoDeConta.Size = new Size(127, 25);
+            lblTipoDeConta.TabIndex = 49;
+            lblTipoDeConta.Text = "Tipo de conta";
+            // 
+            // CadastroDeConta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(539, 546);
+            Controls.Add(lblTipoDeConta);
+            Controls.Add(CBtipodeconta);
             Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtrepetirsenha);
+            Controls.Add(txtsenha);
+            Controls.Add(txtprimeirodeposito);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
-            Name = "CdastroDeConta";
+            Name = "CadastroDeConta";
             Text = "Conta";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -159,12 +184,14 @@
 
         internal protected PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtprimeirodeposito;
+        private TextBox txtsenha;
+        private TextBox txtrepetirsenha;
         private Label label1;
         private Label label2;
         private Label label3;
         private Button button1;
+        private ComboBox CBtipodeconta;
+        private Label lblTipoDeConta;
     }
 }

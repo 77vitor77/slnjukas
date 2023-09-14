@@ -50,6 +50,7 @@
             btnmodificar = new Button();
             btnLimpar = new Button();
             txtSenhaParaAceitar = new TextBox();
+            btnPreencher = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -285,12 +286,26 @@
             txtSenhaParaAceitar.Size = new Size(217, 33);
             txtSenhaParaAceitar.TabIndex = 73;
             // 
+            // btnPreencher
+            // 
+            btnPreencher.BackColor = Color.DeepPink;
+            btnPreencher.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnPreencher.ForeColor = Color.White;
+            btnPreencher.Location = new Point(520, 494);
+            btnPreencher.Name = "btnPreencher";
+            btnPreencher.Size = new Size(222, 43);
+            btnPreencher.TabIndex = 74;
+            btnPreencher.Text = "Preencher";
+            btnPreencher.UseVisualStyleBackColor = false;
+            btnPreencher.Click += btnPreencher_Click;
+            // 
             // ModificarDados
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(843, 549);
+            Controls.Add(btnPreencher);
             Controls.Add(txtSenhaParaAceitar);
             Controls.Add(btnLimpar);
             Controls.Add(btnmodificar);
@@ -345,5 +360,6 @@
         private Button btnmodificar;
         private Button btnLimpar;
         private TextBox txtSenhaParaAceitar;
+        private Button btnPreencher;
     }
 }

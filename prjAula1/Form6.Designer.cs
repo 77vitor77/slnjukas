@@ -30,6 +30,7 @@
         {
             menu = new MenuStrip();
             loginToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripMenuItem();
             criarContaToolStripMenuItem = new ToolStripMenuItem();
             mudarDeContaToolStripMenuItem = new ToolStripMenuItem();
@@ -39,18 +40,15 @@
             saquetranferenciadepositoToolStripMenuItem = new ToolStripMenuItem();
             menuToolStripMenuItem1 = new ToolStripMenuItem();
             cadastroToolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripTextBox1 = new ToolStripTextBox();
-            toolStripTextBox2 = new ToolStripTextBox();
-            toolStripTextBox3 = new ToolStripTextBox();
             menu.SuspendLayout();
             SuspendLayout();
             // 
             // menu
             // 
-            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4, toolStripTextBox1, toolStripTextBox2, toolStripTextBox3 });
+            menu.Items.AddRange(new ToolStripItem[] { loginToolStripMenuItem, toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4 });
             menu.Location = new Point(0, 0);
             menu.Name = "menu";
-            menu.Size = new Size(1381, 27);
+            menu.Size = new Size(1381, 24);
             menu.TabIndex = 0;
             menu.Text = "menuStrip1";
             menu.ItemClicked += menu_ItemClicked;
@@ -58,9 +56,16 @@
             // loginToolStripMenuItem
             // 
             loginToolStripMenuItem.Name = "loginToolStripMenuItem";
-            loginToolStripMenuItem.Size = new Size(49, 23);
+            loginToolStripMenuItem.Size = new Size(49, 20);
             loginToolStripMenuItem.Text = "Login";
             loginToolStripMenuItem.Click += loginToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(66, 20);
+            toolStripMenuItem1.Text = "Cadastro";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click_1;
             // 
             // toolStripMenuItem2
             // 
@@ -68,6 +73,7 @@
             toolStripMenuItem2.Name = "toolStripMenuItem2";
             toolStripMenuItem2.Size = new Size(138, 23);
             toolStripMenuItem2.Text = "configuração da conta";
+            toolStripMenuItem2.Visible = false;
             toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // criarContaToolStripMenuItem
@@ -89,6 +95,7 @@
             toolStripMenuItem3.Name = "toolStripMenuItem3";
             toolStripMenuItem3.Size = new Size(164, 23);
             toolStripMenuItem3.Text = "configuração de correntista";
+            toolStripMenuItem3.Visible = false;
             toolStripMenuItem3.Click += toolStripMenuItem3_Click;
             // 
             // modificaçãoDeDadosToolStripMenuItem
@@ -104,6 +111,7 @@
             toolStripMenuItem4.Name = "toolStripMenuItem4";
             toolStripMenuItem4.Size = new Size(43, 23);
             toolStripMenuItem4.Text = "telas";
+            toolStripMenuItem4.Visible = false;
             // 
             // saquetranferenciadepositoToolStripMenuItem
             // 
@@ -125,30 +133,6 @@
             cadastroToolStripMenuItem1.Size = new Size(230, 22);
             cadastroToolStripMenuItem1.Text = "Cadastro";
             cadastroToolStripMenuItem1.Click += cadastroToolStripMenuItem1_Click;
-            // 
-            // toolStripTextBox1
-            // 
-            toolStripTextBox1.Enabled = false;
-            toolStripTextBox1.Name = "toolStripTextBox1";
-            toolStripTextBox1.Size = new Size(100, 23);
-            toolStripTextBox1.Visible = false;
-            toolStripTextBox1.Click += toolStripTextBox1_Click;
-            // 
-            // toolStripTextBox2
-            // 
-            toolStripTextBox2.Enabled = false;
-            toolStripTextBox2.Name = "toolStripTextBox2";
-            toolStripTextBox2.Size = new Size(100, 23);
-            toolStripTextBox2.Text = "conta";
-            toolStripTextBox2.Visible = false;
-            // 
-            // toolStripTextBox3
-            // 
-            toolStripTextBox3.Enabled = false;
-            toolStripTextBox3.Name = "toolStripTextBox3";
-            toolStripTextBox3.Size = new Size(100, 23);
-            toolStripTextBox3.Visible = false;
-            toolStripTextBox3.Click += toolStripTextBox3_Click;
             // 
             // Form6
             // 
@@ -183,5 +167,6 @@
         private ToolStripMenuItem saquetranferenciadepositoToolStripMenuItem;
         private ToolStripMenuItem menuToolStripMenuItem1;
         private ToolStripMenuItem cadastroToolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

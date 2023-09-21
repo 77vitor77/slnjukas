@@ -103,7 +103,7 @@ namespace prjAula1
             SqlCommand cmd = new SqlCommand();
 
             //criando texto do comando, tipo e conexão que será usada
-            cmd.CommandText = "psValidaLogin";
+            cmd.CommandText = "ps_ValidarLogin";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = conexao;
 
@@ -145,7 +145,7 @@ namespace prjAula1
                 leitor.Close();
 
                 //criando texto do comando, tipo e conexão que será usada
-                cmd.CommandText = "ps_buscaContasPorIdCliente";
+                cmd.CommandText = "ps_buscaContasPorIdCorrentista_48";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Connection = conexao;
 
@@ -183,7 +183,11 @@ namespace prjAula1
                         //adiciona a conta recém criada na memória para a colection de contas
                         UsuarioLogado.Contas.Add(conta);
                     }
+                    MessageBox.Show($"Olá,{UsuarioLogado.NomeCliente}!\n" +
+                   $"Você foi logado na conta {UsuarioLogado.Contas[0].IdConta.ToString()}\n" +
+                   $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
                 }
+               
                 leitor.Close(); //fecha leitor
                 conexao.Close(); //fecha conexao com BD
 
@@ -191,20 +195,13 @@ namespace prjAula1
                 //acessando o formulário aberto através da variável janelaPrincipal
                 MenuStrip menuPrincipal = (MenuStrip)telaPrincipal.Controls[0];
                 menuPrincipal.Items[0].Text = "Logout";
-                menuPrincipal.Items[1].Visible = true;
+                menuPrincipal.Items[1].Visible = false;
                 menuPrincipal.Items[2].Visible = true;
                 menuPrincipal.Items[3].Visible = true;
                 menuPrincipal.Items[4].Visible = true;
-                menuPrincipal.Items[4].Text = UsuarioLogado.NomeCliente;
-                menuPrincipal.Items[5].Visible = true;
-                menuPrincipal.Items[6].Visible = true;
-                menuPrincipal.Items[6].Text = menuPrincipal.Items[6].Text = UsuarioLogado.Contas[0].IdConta.ToString();
 
 
-
-                MessageBox.Show($"Olá,{UsuarioLogado.NomeCliente}!\n" +
-                    $"Você foi logado na conta {UsuarioLogado.Contas[0].IdConta.ToString()}\n" +
-                    $"Para trocar de conta, utilize o menu Conta\\Alternar Conta");
+               
                 //MessageBox.Show($"{CorrentistaLogado.Id.ToString()},{CorrentistaLogado.NomeCorrentista},{CorrentistaLogado.DataNascimento.ToString()},{CorrentistaLogado.Logradouro}," +
                 //    $"{CorrentistaLogado.Numero},{CorrentistaLogado.Complemento},{CorrentistaLogado.Cidade}," +
                 //    $"{CorrentistaLogado.Estado},{CorrentistaLogado.Cpf},{CorrentistaLogado.Senha},{CorrentistaLogado.Celular}");

@@ -26,9 +26,9 @@ namespace prjAula1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("workstation id=vitorDataBaseJukaBank.mssql.somee.com;packet size=4096;user id=Vit" +
-            "orGraciolli_SQLLogin_1;pwd=bb7hhvd6f5;data source=vitorDataBaseJukaBank.mssql.so" +
-            "mee.com;persist security info=False;initial catalog=vitorDataBaseJukaBank")]
+        [global::System.Configuration.DefaultSettingValueAttribute("workstation id=vitorgraciolli.mssql.somee.com;packet size=4096;user id=vitor_GO__" +
+            "SQLLogin_1;pwd=4hvyqaj3zb;data source=vitorgraciolli.mssql.somee.com;persist sec" +
+            "urity info=False;initial catalog=vitorgraciolli")]
         public string bancojuka {
             get {
                 return ((string)(this["bancojuka"]));

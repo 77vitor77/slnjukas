@@ -52,7 +52,7 @@ namespace prjAula1
 
 
                     //criando texto do comando, tipo e conexão que será usada
-                    cmd.CommandText = "pi_conta";
+                    cmd.CommandText = "pi_Conta";
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Connection = conexao;
 
@@ -61,7 +61,7 @@ namespace prjAula1
                     //inserindo parâmetros à procedure
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("idCliente", UsuarioLogado.IdCliente);
-                    cmd.Parameters.AddWithValue("Diadeabertura", conta.DataAbertura);
+                    cmd.Parameters.AddWithValue("datadeabertura", conta.DataAbertura);
                     cmd.Parameters.AddWithValue("saldo", conta.Saldo);
                     cmd.Parameters.AddWithValue("tipoConta", conta.tipoConta);
                     cmd.Parameters.AddWithValue("statusConta",conta.StatusConta);

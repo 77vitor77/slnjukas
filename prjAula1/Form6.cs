@@ -142,5 +142,12 @@ namespace prjAula1
             janelaCadastro.MdiParent = this;
             janelaCadastro.Show();
         }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            Cadastro janelaCadastro = new Cadastro();
+            janelaCadastro.MdiParent = this;
+            janelaCadastro.Show();
+        }
     }
 }

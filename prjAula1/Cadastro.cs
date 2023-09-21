@@ -67,7 +67,7 @@ namespace prjAula1
                     cmd.Parameters.AddWithValue("dataNascimento", Convert.ToDateTime(dtpdatadenascimento.Text));
                     cmd.Parameters.AddWithValue("Celular", txtcelular.Text);
                     cmd.Parameters.AddWithValue("complemento", Complemento.Text);
-                    cmd.Parameters.AddWithValue("endereco", txtendereco.Text);
+                    cmd.Parameters.AddWithValue("endereço", txtendereco.Text);
                     cmd.Parameters.AddWithValue("cidade", txtcidade.Text);
                     cmd.Parameters.AddWithValue("estado", CBestados.Text);
 
